@@ -45,6 +45,9 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
   const pathname = usePathname()
 
   const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/"
+    }
     return pathname === path || pathname.startsWith(`${path}/`)
   }
 
@@ -184,8 +187,8 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/races/events")}>
-                        <Link href="/races/events">
+                      <SidebarMenuButton asChild isActive={isActive("/races")}>
+                        <Link href="/races">
                           <Calendar className="h-4 w-4" />
                           <span>Events</span>
                         </Link>

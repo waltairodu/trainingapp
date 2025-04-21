@@ -2,9 +2,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronRight, MonitorIcon as Running, Trophy, Users } from "lucide-react"
+import { redirect } from "next/navigation"
 
 export default function Home() {
+  // Redirect to dashboard when accessing the root path
+  redirect("/dashboard")
+
   return (
+    // Rest of the component remains the same
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background">
         <div className="container flex h-16 items-center justify-between py-4">
