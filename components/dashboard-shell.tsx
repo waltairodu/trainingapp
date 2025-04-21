@@ -5,9 +5,5 @@ interface DashboardShellProps {
 }
 
 export function DashboardShell({ children }: DashboardShellProps) {
-  return (
-    <div className="flex-1">
-      <main className="flex-1">{children}</main>
-    </div>
-  )
+  return <div className="flex-1 container py-6 space-y-6">{children}</div>
 }

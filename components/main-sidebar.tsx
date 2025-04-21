@@ -33,6 +33,8 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarSeparator,
+  SidebarTrigger,
+  SidebarInset,
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
@@ -56,9 +58,12 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
       <div className="flex min-h-screen">
         <Sidebar>
           <SidebarHeader>
-            <div className="flex items-center gap-2 px-4 py-2">
-              <Running className="h-6 w-6" />
-              <h1 className="text-xl font-bold">RunTrack Pro</h1>
+            <div className="flex items-center justify-between px-4 py-2">
+              <div className="flex items-center gap-2">
+                <Running className="h-6 w-6" />
+                <h1 className="text-xl font-bold">RunTrack Pro</h1>
+              </div>
+              <SidebarTrigger className="md:hidden" />
             </div>
           </SidebarHeader>
           <SidebarSeparator />
@@ -261,7 +266,13 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
           </SidebarFooter>
           <SidebarRail />
         </Sidebar>
-        <div className="flex-1">{children}</div>
+        <SidebarInset>
+          <header className="flex h-16 items-center gap-2 border-b px-4">
+            <SidebarTrigger className="hidden md:flex" />
+            <div className="flex-1" />
+          </header>
+          <div className="flex-1">{children}</div>
+        </SidebarInset>
       </div>
     </SidebarProvider>
   )
