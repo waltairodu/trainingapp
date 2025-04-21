@@ -17,6 +17,7 @@ import {
   User,
   Users,
   Workflow,
+  Search,
 } from "lucide-react"
 import {
   Sidebar,
@@ -109,6 +110,14 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
                         <Link href="/runners/races">
                           <Trophy className="h-4 w-4" />
                           <span>My Races</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton asChild isActive={isActive("/runners/find-coach")}>
+                        <Link href="/runners/find-coach">
+                          <Search className="h-4 w-4" />
+                          <span>Find a Coach</span>
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
