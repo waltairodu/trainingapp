@@ -18,6 +18,7 @@ import {
   Users,
   Workflow,
   Search,
+  Menu,
 } from "lucide-react"
 import {
   Sidebar,
@@ -33,14 +34,29 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarSeparator,
-  SidebarTrigger,
   SidebarInset,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 
 interface MainSidebarProps {
   userRole?: "runner" | "coach" | "organizer" | "admin"
   children: React.ReactNode
+}
+
+// Mobile menu button component
+function MobileMenuButton() {
+  const { toggleSidebar, isMobile } = useSidebar()
+
+  if (!isMobile) return null
+
+  return (
+    <Button variant="ghost" size="icon" onClick={toggleSidebar} className="md:hidden">
+      <Menu className="h-5 w-5" />
+      <span className="sr-only">Toggle Menu</span>
+    </Button>
+  )
 }
 
 export function MainSidebar({ userRole = "runner", children }: MainSidebarProps) {
@@ -56,14 +72,13 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar>
+        <Sidebar collapsible="offcanvas">
           <SidebarHeader>
-            <div className="flex items-center justify-between px-4 py-2">
+            <div className="flex items-center px-4 py-2">
               <div className="flex items-center gap-2">
                 <Running className="h-6 w-6" />
                 <h1 className="text-xl font-bold">RunTrack Pro</h1>
               </div>
-              <SidebarTrigger className="md:hidden" />
             </div>
           </SidebarHeader>
           <SidebarSeparator />
@@ -268,7 +283,11 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
         </Sidebar>
         <SidebarInset>
           <header className="flex h-16 items-center gap-2 border-b px-4">
-            <SidebarTrigger className="hidden md:flex" />
+            <MobileMenuButton />
+            <div className="flex items-center">
+              <Running className="h-6 w-6 md:hidden" />
+              <h1 className="text-xl font-bold ml-2 md:hidden">RunTrack Pro</h1>
+            </div>
             <div className="flex-1" />
           </header>
           <div className="flex-1">{children}</div>
