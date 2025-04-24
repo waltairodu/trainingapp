@@ -59,6 +59,23 @@ function MobileMenuButton() {
   )
 }
 
+// Navigation link that closes sidebar on mobile when clicked
+function NavLink({ href, isActive, children }: { href: string; isActive: boolean; children: React.ReactNode }) {
+  const { isMobile, setOpenMobile } = useSidebar()
+
+  const handleClick = () => {
+    if (isMobile) {
+      setOpenMobile(false)
+    }
+  }
+
+  return (
+    <SidebarMenuButton asChild isActive={isActive} onClick={handleClick}>
+      <Link href={href}>{children}</Link>
+    </SidebarMenuButton>
+  )
+}
+
 export function MainSidebar({ userRole = "runner", children }: MainSidebarProps) {
   const pathname = usePathname()
 
@@ -87,12 +104,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={isActive("/dashboard")}>
-                      <Link href="/dashboard">
-                        <Home className="h-4 w-4" />
-                        <span>Dashboard</span>
-                      </Link>
-                    </SidebarMenuButton>
+                    <NavLink href="/dashboard" isActive={isActive("/dashboard")}>
+                      <Home className="h-4 w-4" />
+                      <span>Dashboard</span>
+                    </NavLink>
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
@@ -105,44 +120,34 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/runners/dashboard")}>
-                        <Link href="/runners/dashboard">
-                          <Activity className="h-4 w-4" />
-                          <span>Runner Dashboard</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/runners/dashboard" isActive={isActive("/runners/dashboard")}>
+                        <Activity className="h-4 w-4" />
+                        <span>Runner Dashboard</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/runners/training")}>
-                        <Link href="/runners/training">
-                          <ClipboardList className="h-4 w-4" />
-                          <span>Training Plans</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/runners/training" isActive={isActive("/runners/training")}>
+                        <ClipboardList className="h-4 w-4" />
+                        <span>Training Plans</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/runners/activities")}>
-                        <Link href="/runners/activities">
-                          <LineChart className="h-4 w-4" />
-                          <span>Activities</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/runners/activities" isActive={isActive("/runners/activities")}>
+                        <LineChart className="h-4 w-4" />
+                        <span>Activities</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/runners/races")}>
-                        <Link href="/runners/races">
-                          <Trophy className="h-4 w-4" />
-                          <span>My Races</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/runners/races" isActive={isActive("/runners/races")}>
+                        <Trophy className="h-4 w-4" />
+                        <span>My Races</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/runners/find-coach")}>
-                        <Link href="/runners/find-coach">
-                          <Search className="h-4 w-4" />
-                          <span>Find a Coach</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/runners/find-coach" isActive={isActive("/runners/find-coach")}>
+                        <Search className="h-4 w-4" />
+                        <span>Find a Coach</span>
+                      </NavLink>
                     </SidebarMenuItem>
                   </SidebarMenu>
                 </SidebarGroupContent>
@@ -156,36 +161,28 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/coaches/dashboard")}>
-                        <Link href="/coaches/dashboard">
-                          <Users className="h-4 w-4" />
-                          <span>Coach Dashboard</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/coaches/dashboard" isActive={isActive("/coaches/dashboard")}>
+                        <Users className="h-4 w-4" />
+                        <span>Coach Dashboard</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/coaches/athletes")}>
-                        <Link href="/coaches/athletes">
-                          <User className="h-4 w-4" />
-                          <span>Athletes</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/coaches/athletes" isActive={isActive("/coaches/athletes")}>
+                        <User className="h-4 w-4" />
+                        <span>Athletes</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/coaches/plans")}>
-                        <Link href="/coaches/plans">
-                          <ClipboardList className="h-4 w-4" />
-                          <span>Training Plans</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/coaches/plans" isActive={isActive("/coaches/plans")}>
+                        <ClipboardList className="h-4 w-4" />
+                        <span>Training Plans</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/coaches/analytics")}>
-                        <Link href="/coaches/analytics">
-                          <LineChart className="h-4 w-4" />
-                          <span>Analytics</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/coaches/analytics" isActive={isActive("/coaches/analytics")}>
+                        <LineChart className="h-4 w-4" />
+                        <span>Analytics</span>
+                      </NavLink>
                     </SidebarMenuItem>
                   </SidebarMenu>
                 </SidebarGroupContent>
@@ -199,28 +196,22 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/races/dashboard")}>
-                        <Link href="/races/dashboard">
-                          <Trophy className="h-4 w-4" />
-                          <span>Race Dashboard</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/races/dashboard" isActive={isActive("/races/dashboard")}>
+                        <Trophy className="h-4 w-4" />
+                        <span>Race Dashboard</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/races")}>
-                        <Link href="/races">
-                          <Calendar className="h-4 w-4" />
-                          <span>Events</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/races" isActive={isActive("/races")}>
+                        <Calendar className="h-4 w-4" />
+                        <span>Events</span>
+                      </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                      <SidebarMenuButton asChild isActive={isActive("/races/registrations")}>
-                        <Link href="/races/registrations">
-                          <ClipboardList className="h-4 w-4" />
-                          <span>Registrations</span>
-                        </Link>
-                      </SidebarMenuButton>
+                      <NavLink href="/races/registrations" isActive={isActive("/races/registrations")}>
+                        <ClipboardList className="h-4 w-4" />
+                        <span>Registrations</span>
+                      </NavLink>
                     </SidebarMenuItem>
                   </SidebarMenu>
                 </SidebarGroupContent>
@@ -232,20 +223,16 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={isActive("/workflows")}>
-                      <Link href="/workflows">
-                        <Workflow className="h-4 w-4" />
-                        <span>All Workflows</span>
-                      </Link>
-                    </SidebarMenuButton>
+                    <NavLink href="/workflows" isActive={isActive("/workflows")}>
+                      <Workflow className="h-4 w-4" />
+                      <span>All Workflows</span>
+                    </NavLink>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={isActive("/workflows/assigned")}>
-                      <Link href="/workflows/assigned">
-                        <Clock className="h-4 w-4" />
-                        <span>Assigned to Me</span>
-                      </Link>
-                    </SidebarMenuButton>
+                    <NavLink href="/workflows/assigned" isActive={isActive("/workflows/assigned")}>
+                      <Clock className="h-4 w-4" />
+                      <span>Assigned to Me</span>
+                    </NavLink>
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
@@ -256,12 +243,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={isActive("/settings")}>
-                      <Link href="/settings">
-                        <Settings className="h-4 w-4" />
-                        <span>Settings</span>
-                      </Link>
-                    </SidebarMenuButton>
+                    <NavLink href="/settings" isActive={isActive("/settings")}>
+                      <Settings className="h-4 w-4" />
+                      <span>Settings</span>
+                    </NavLink>
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
