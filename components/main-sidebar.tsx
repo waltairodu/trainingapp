@@ -12,7 +12,6 @@ import {
   Home,
   LineChart,
   MonitorIcon as Running,
-  Settings,
   Trophy,
   User,
   Users,
@@ -23,7 +22,6 @@ import {
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -37,8 +35,9 @@ import {
   SidebarInset,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { ProfileDropdown } from "@/components/profile-dropdown"
 
 interface MainSidebarProps {
   userRole?: "runner" | "coach" | "organizer" | "admin"
@@ -52,7 +51,7 @@ function MobileMenuButton() {
   if (!isMobile) return null
 
   return (
-    <Button variant="ghost" size="icon" onClick={toggleSidebar} className="md:hidden">
+    <Button variant="ghost" size="icon" onClick={toggleSidebar} className="md:hidden z-[9999]">
       <Menu className="h-5 w-5" />
       <span className="sr-only">Toggle Menu</span>
     </Button>
@@ -70,8 +69,10 @@ function NavLink({ href, isActive, children }: { href: string; isActive: boolean
   }
 
   return (
-    <SidebarMenuButton asChild isActive={isActive} onClick={handleClick}>
-      <Link href={href}>{children}</Link>
+    <SidebarMenuButton asChild isActive={isActive} onClick={handleClick} className="p-0">
+      <Link href={href} className="flex items-center gap-3 w-full py-2 px-3">
+        {children}
+      </Link>
     </SidebarMenuButton>
   )
 }
@@ -99,10 +100,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
             </div>
           </SidebarHeader>
           <SidebarSeparator />
-          <SidebarContent>
-            <SidebarGroup>
+          <SidebarContent className="py-2">
+            <SidebarGroup className="py-0">
               <SidebarGroupContent>
-                <SidebarMenu>
+                <SidebarMenu className="gap-1 px-2">
                   <SidebarMenuItem>
                     <NavLink href="/dashboard" isActive={isActive("/dashboard")}>
                       <Home className="h-4 w-4" />
@@ -115,10 +116,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
 
             {/* Runner Navigation */}
             {(userRole === "runner" || userRole === "admin") && (
-              <SidebarGroup>
-                <SidebarGroupLabel>Runner</SidebarGroupLabel>
+              <SidebarGroup className="py-1">
+                <SidebarGroupLabel className="px-4 mb-1">Runner</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu>
+                  <SidebarMenu className="gap-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/runners/dashboard" isActive={isActive("/runners/dashboard")}>
                         <Activity className="h-4 w-4" />
@@ -156,10 +157,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
 
             {/* Coach Navigation */}
             {(userRole === "coach" || userRole === "admin") && (
-              <SidebarGroup>
-                <SidebarGroupLabel>Coach</SidebarGroupLabel>
+              <SidebarGroup className="py-1">
+                <SidebarGroupLabel className="px-4 mb-1">Coach</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu>
+                  <SidebarMenu className="gap-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/coaches/dashboard" isActive={isActive("/coaches/dashboard")}>
                         <Users className="h-4 w-4" />
@@ -191,10 +192,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
 
             {/* Race Organizer Navigation */}
             {(userRole === "organizer" || userRole === "admin") && (
-              <SidebarGroup>
-                <SidebarGroupLabel>Race Organizer</SidebarGroupLabel>
+              <SidebarGroup className="py-1">
+                <SidebarGroupLabel className="px-4 mb-1">Race Organizer</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu>
+                  <SidebarMenu className="gap-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/races/dashboard" isActive={isActive("/races/dashboard")}>
                         <Trophy className="h-4 w-4" />
@@ -218,10 +219,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               </SidebarGroup>
             )}
 
-            <SidebarGroup>
-              <SidebarGroupLabel>Workflows</SidebarGroupLabel>
+            <SidebarGroup className="py-1">
+              <SidebarGroupLabel className="px-4 mb-1">Workflows</SidebarGroupLabel>
               <SidebarGroupContent>
-                <SidebarMenu>
+                <SidebarMenu className="gap-1 px-2">
                   <SidebarMenuItem>
                     <NavLink href="/workflows" isActive={isActive("/workflows")}>
                       <Workflow className="h-4 w-4" />
@@ -238,32 +239,6 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               </SidebarGroupContent>
             </SidebarGroup>
           </SidebarContent>
-          <SidebarFooter>
-            <SidebarGroup>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <NavLink href="/settings" isActive={isActive("/settings")}>
-                      <Settings className="h-4 w-4" />
-                      <span>Settings</span>
-                    </NavLink>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-            <div className="p-4">
-              <div className="flex items-center gap-3">
-                <Avatar>
-                  <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium">John Doe</span>
-                  <span className="text-xs text-muted-foreground capitalize">{userRole}</span>
-                </div>
-              </div>
-            </div>
-          </SidebarFooter>
           <SidebarRail />
         </Sidebar>
         <SidebarInset>
@@ -274,6 +249,10 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <h1 className="text-xl font-bold ml-2 md:hidden">RunTrack Pro</h1>
             </div>
             <div className="flex-1" />
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <ProfileDropdown name="John Doe" email="john.doe@example.com" role={userRole} initials="JD" />
+            </div>
           </header>
           <div className="flex-1">{children}</div>
         </SidebarInset>
