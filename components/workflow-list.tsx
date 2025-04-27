@@ -154,7 +154,7 @@ export function WorkflowList() {
             <TableCell>
               <div className="flex items-center gap-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src={workflow.assignee.avatar} alt={workflow.assignee.name} />
+                  <AvatarImage src={workflow.assignee.avatar || "/placeholder.svg"} alt={workflow.assignee.name} />
                   <AvatarFallback>{workflow.assignee.initials}</AvatarFallback>
                 </Avatar>
                 <span className="text-sm">{workflow.assignee.name}</span>

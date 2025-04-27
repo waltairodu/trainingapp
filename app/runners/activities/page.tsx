@@ -50,8 +50,8 @@ export default function RunnerActivitiesPage() {
               <CardDescription>Insights and trends from your running data.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                <Card>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Card className="flex-1">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm">Weekly Distance</CardTitle>
                   </CardHeader>
@@ -60,7 +60,7 @@ export default function RunnerActivitiesPage() {
                     <p className="text-xs text-muted-foreground">+5.2 km from last week</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm">Average Pace</CardTitle>
                   </CardHeader>

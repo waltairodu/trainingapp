@@ -48,8 +48,8 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
         </div>
       </DashboardHeader>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1">
+      <div className="flex flex-col gap-6 md:flex-row">
+        <Card className="md:flex-1">
           <CardContent className="p-6">
             <div className="flex flex-col items-center text-center mb-6">
               <Avatar className="h-32 w-32 mb-4">
@@ -110,7 +110,7 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
           </CardContent>
         </Card>
 
-        <div className="md:col-span-2 space-y-6">
+        <div className="md:flex-1 space-y-6">
           <Tabs defaultValue="overview" className="space-y-4">
             <TabsList>
               <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -119,8 +119,8 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
               <TabsTrigger value="plans">Plans</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+              <div className="flex flex-col md:flex-row gap-4 flex-wrap">
+                <Card className="flex-1">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Weekly Distance</CardTitle>
                     <Activity className="h-4 w-4 text-muted-foreground" />
@@ -137,7 +137,7 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Compliance</CardTitle>
                     <ClipboardList className="h-4 w-4 text-muted-foreground" />
@@ -147,7 +147,7 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
                     <p className="text-xs text-muted-foreground">Plan adherence rate</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Next Workout</CardTitle>
                     <Calendar className="h-4 w-4 text-muted-foreground" />
@@ -157,7 +157,7 @@ export default function AthleteDetailPage({ params }: { params: { id: string } }
                     <p className="text-xs text-muted-foreground">8km Easy Run</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Training Load</CardTitle>
                     <LineChart className="h-4 w-4 text-muted-foreground" />

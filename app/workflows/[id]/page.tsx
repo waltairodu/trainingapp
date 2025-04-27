@@ -95,8 +95,8 @@ export default function WorkflowDetailPage({ params }: { params: { id: string } 
         </div>
       </DashboardHeader>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        <div className="md:col-span-2 space-y-4">
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex-1 md:flex-[2] space-y-4">
           <Card>
             <CardHeader>
               <CardTitle>Workflow Details</CardTitle>
@@ -142,7 +142,7 @@ export default function WorkflowDetailPage({ params }: { params: { id: string } 
           </Card>
         </div>
 
-        <div className="space-y-4">
+        <div className="flex-1 space-y-4">
           <Card>
             <CardHeader>
               <CardTitle>Status Information</CardTitle>

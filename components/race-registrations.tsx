@@ -145,10 +145,10 @@ export function RaceRegistrations({ detailed = false }: RaceRegistrationsProps) 
   }
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col space-y-4">
       {registrations.slice(0, 3).map((registration) => (
         <Card key={registration.id} className="p-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <Avatar>
                 <AvatarImage
@@ -159,7 +159,7 @@ export function RaceRegistrations({ detailed = false }: RaceRegistrationsProps) 
               </Avatar>
               <div>
                 <h4 className="font-medium">{registration.participant.name}</h4>
-                <div className="flex items-center gap-2 mt-1">
+                <div className="flex flex-wrap items-center gap-2 mt-1">
                   <span className="text-sm text-muted-foreground">{registration.race}</span>
                   <span className="text-sm text-muted-foreground">•</span>
                   <span className="text-sm text-muted-foreground">{registration.category}</span>

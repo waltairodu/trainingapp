@@ -45,8 +45,8 @@ export default function CoachPlansPage() {
               <CardDescription>Reusable training plan templates.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                <Card>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>
@@ -59,7 +59,7 @@ export default function CoachPlansPage() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>

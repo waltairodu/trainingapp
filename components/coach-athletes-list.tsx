@@ -125,10 +125,10 @@ export function CoachAthletesList({ detailed = false }: CoachAthletesListProps) 
   }
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col space-y-4">
       {athletes.map((athlete) => (
         <Card key={athlete.id} className="p-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Avatar>
                 <AvatarImage src={athlete.avatar || "/placeholder.svg"} alt={athlete.name} />
@@ -136,7 +136,7 @@ export function CoachAthletesList({ detailed = false }: CoachAthletesListProps) 
               </Avatar>
               <div>
                 <h4 className="font-medium">{athlete.name}</h4>
-                <div className="flex items-center gap-2 mt-1">
+                <div className="flex flex-wrap items-center gap-2 mt-1">
                   <Badge
                     variant="outline"
                     className={

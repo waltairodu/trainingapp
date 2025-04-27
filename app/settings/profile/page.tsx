@@ -27,8 +27,8 @@ export default function ProfilePage() {
         text="Manage your personal information and preferences"
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1">
+      <div className="flex flex-col md:flex-row gap-6">
+        <Card className="md:flex-1">
           <CardHeader>
             <CardTitle>Your Profile</CardTitle>
             <CardDescription>Manage your personal information</CardDescription>
@@ -47,7 +47,7 @@ export default function ProfilePage() {
           </CardContent>
         </Card>
 
-        <div className="md:col-span-2 space-y-6">
+        <div className="md:flex-[2] space-y-6">
           <Tabs defaultValue="personal" className="space-y-4">
             <TabsList>
               <TabsTrigger value="personal">Personal Info</TabsTrigger>
@@ -61,20 +61,20 @@ export default function ProfilePage() {
                   <CardDescription>Update your personal details</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
+                  <div className="flex flex-wrap gap-4">
+                    <div className="space-y-2 flex-1 min-w-[240px]">
                       <Label htmlFor="firstName">First Name</Label>
                       <Input id="firstName" defaultValue="John" />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1 min-w-[240px]">
                       <Label htmlFor="lastName">Last Name</Label>
                       <Input id="lastName" defaultValue="Doe" />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1 min-w-[240px]">
                       <Label htmlFor="email">Email</Label>
                       <Input id="email" type="email" defaultValue="john.doe@example.com" />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1 min-w-[240px]">
                       <Label htmlFor="phone">Phone</Label>
                       <Input id="phone" type="tel" defaultValue="+1 (555) 123-4567" />
                     </div>

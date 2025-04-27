@@ -58,7 +58,7 @@ export function WorkflowComments() {
 
   return (
     <div className="space-y-4">
-      <div className="space-y-4">
+      <div className="flex flex-col space-y-4">
         {comments.map((comment) => (
           <div key={comment.id} className="flex gap-3">
             <Avatar className="h-8 w-8">

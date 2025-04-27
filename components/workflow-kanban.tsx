@@ -120,10 +120,10 @@ export function WorkflowKanban() {
                 <PlusCircle className="mr-2 h-4 w-4" />
                 Add Item
               </Button>
-              <div className="space-y-2">
+              <div className="flex flex-col space-y-2">
                 {column.items.map((item) => (
                   <Card key={item.id} className="p-3">
-                    <div className="space-y-2">
+                    <div className="flex flex-col space-y-2">
                       <div className="flex items-center justify-between">
                         <Badge variant="outline">{item.type}</Badge>
                         {getPriorityBadge(item.priority)}
@@ -133,7 +133,7 @@ export function WorkflowKanban() {
                       <div className="flex items-center justify-between pt-2">
                         <div className="flex items-center gap-2">
                           <Avatar className="h-6 w-6">
-                            <AvatarImage src={item.assignee.avatar} alt={item.assignee.name} />
+                            <AvatarImage src={item.assignee.avatar || "/placeholder.svg"} alt={item.assignee.name} />
                             <AvatarFallback>{item.assignee.initials}</AvatarFallback>
                           </Avatar>
                         </div>

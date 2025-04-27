@@ -23,8 +23,8 @@ export default function FindCoachPage() {
               <Input type="search" placeholder="Search by name, specialty, or location..." className="pl-8" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Select defaultValue="any">
+            <div className="flex flex-col md:flex-row gap-4">
+              <Select defaultValue="any" className="flex-1">
                 <SelectTrigger>
                   <SelectValue placeholder="Specialty" />
                 </SelectTrigger>
@@ -38,7 +38,7 @@ export default function FindCoachPage() {
                 </SelectContent>
               </Select>
 
-              <Select defaultValue="any">
+              <Select defaultValue="any" className="flex-1">
                 <SelectTrigger>
                   <SelectValue placeholder="Experience Level" />
                 </SelectTrigger>
@@ -50,7 +50,7 @@ export default function FindCoachPage() {
                 </SelectContent>
               </Select>
 
-              <Select defaultValue="any">
+              <Select defaultValue="any" className="flex-1">
                 <SelectTrigger>
                   <SelectValue placeholder="Availability" />
                 </SelectTrigger>

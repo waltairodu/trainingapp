@@ -25,20 +25,20 @@ export default function SettingsPage() {
               <CardDescription>Update your personal information.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="flex flex-wrap gap-4">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="firstName">First Name</Label>
                   <Input id="firstName" defaultValue="John" />
                 </div>
-                <div className="space-y-2">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="lastName">Last Name</Label>
                   <Input id="lastName" defaultValue="Doe" />
                 </div>
-                <div className="space-y-2">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" type="email" defaultValue="john.doe@example.com" />
                 </div>
-                <div className="space-y-2">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="phone">Phone</Label>
                   <Input id="phone" type="tel" defaultValue="+1 (555) 123-4567" />
                 </div>
@@ -54,12 +54,12 @@ export default function SettingsPage() {
               <CardDescription>Update your running preferences and stats.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="flex flex-wrap gap-4">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="primaryDistance">Primary Distance</Label>
                   <Input id="primaryDistance" defaultValue="Marathon" />
                 </div>
-                <div className="space-y-2">
+                <div className="flex-1 min-w-[240px] space-y-2">
                   <Label htmlFor="weeklyMileage">Weekly Mileage Goal (km)</Label>
                   <Input id="weeklyMileage" type="number" defaultValue="40" />
                 </div>
@@ -97,9 +97,9 @@ export default function SettingsPage() {
           </Card>
         </TabsContent>
         <TabsContent value="integrations" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex flex-col md:flex-row gap-4">
             <StravaConnect isConnected={true} />
-            <Card>
+            <Card className="flex-1">
               <CardHeader>
                 <CardTitle>Garmin Connect</CardTitle>
                 <CardDescription>Connect your Garmin device</CardDescription>

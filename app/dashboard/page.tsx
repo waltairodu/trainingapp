@@ -20,8 +20,8 @@ export default function DashboardPage() {
         </TabsList>
         <TabsContent value="overview" className="space-y-4">
           <StatsCards />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card className="lg:col-span-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <Card className="flex-1 md:max-w-[57%]">
               <CardHeader>
                 <CardTitle>Recent Activities</CardTitle>
                 <CardDescription>Your latest training sessions and race results.</CardDescription>
@@ -30,7 +30,7 @@ export default function DashboardPage() {
                 <RecentActivities />
               </CardContent>
             </Card>
-            <Card className="lg:col-span-3">
+            <Card className="flex-1 md:max-w-[43%]">
               <CardHeader>
                 <CardTitle>Workflow Tasks</CardTitle>
                 <CardDescription>Your pending tasks and approvals.</CardDescription>

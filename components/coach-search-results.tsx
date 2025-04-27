@@ -1,14 +1,6 @@
 "use client"
 
-import { SelectItem } from "@/components/ui/select"
-
-import { SelectContent } from "@/components/ui/select"
-
-import { SelectValue } from "@/components/ui/select"
-
-import { SelectTrigger } from "@/components/ui/select"
-
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -82,7 +74,7 @@ export function CoachSearchResults() {
         </Select>
       </div>
 
-      <div className="space-y-4">
+      <div className="flex flex-col space-y-4">
         {coaches.map((coach) => (
           <Card key={coach.id} className="overflow-hidden">
             <CardContent className="p-0">
@@ -103,7 +95,7 @@ export function CoachSearchResults() {
 
                 <div className="flex-1 p-6">
                   <div className="flex flex-col md:flex-row justify-between">
-                    <div className="space-y-2">
+                    <div className="flex flex-col space-y-2">
                       <div className="flex items-center text-sm">
                         <MapPin className="h-4 w-4 mr-2 text-muted-foreground" />
                         {coach.location}

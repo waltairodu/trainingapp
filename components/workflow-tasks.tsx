@@ -71,7 +71,7 @@ export function WorkflowTasks() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col space-y-4">
       {tasks.map((task) => (
         <div key={task.id} className="flex flex-col gap-2 rounded-lg border p-3">
           <div className="flex items-start justify-between">

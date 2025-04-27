@@ -82,8 +82,8 @@ export default function RunnerTrainingPage() {
               <CardDescription>Browse available training plans.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                <Card>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <h3 className="font-semibold">5K for Beginners</h3>
                     <p className="text-sm text-muted-foreground mt-1">8-week plan for new runners</p>
@@ -92,7 +92,7 @@ export default function RunnerTrainingPage() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <h3 className="font-semibold">Marathon Advanced</h3>
                     <p className="text-sm text-muted-foreground mt-1">16-week plan for experienced runners</p>

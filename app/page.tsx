@@ -65,8 +65,8 @@ export default function Home() {
         </section>
         <section className="py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
+            <div className="flex flex-col md:flex-row gap-6">
+              <Card className="flex-1">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Running className="h-5 w-5 text-primary" />
@@ -98,7 +98,7 @@ export default function Home() {
                   <Button className="w-full">Runner Dashboard</Button>
                 </CardFooter>
               </Card>
-              <Card>
+              <Card className="flex-1">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Users className="h-5 w-5 text-primary" />
@@ -130,7 +130,7 @@ export default function Home() {
                   <Button className="w-full">Coach Dashboard</Button>
                 </CardFooter>
               </Card>
-              <Card>
+              <Card className="flex-1">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Trophy className="h-5 w-5 text-primary" />

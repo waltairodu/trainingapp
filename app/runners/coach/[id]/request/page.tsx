@@ -75,8 +75,8 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
         text={`Submit a coaching request to ${coach.name}`}
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1">
+      <div className="flex flex-col md:flex-row gap-6">
+        <Card className="md:flex-1">
           <CardHeader>
             <CardTitle>Selected Coach</CardTitle>
             <CardDescription>You're requesting coaching from:</CardDescription>
@@ -91,7 +91,7 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
           </CardContent>
         </Card>
 
-        <Card className="md:col-span-2">
+        <Card className="md:flex-[2]">
           <form onSubmit={handleSubmit}>
             <CardHeader>
               <CardTitle>Coaching Request</CardTitle>
@@ -100,8 +100,8 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="package">Select Coaching Package</Label>
-                <RadioGroup defaultValue="basic" id="package" className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
+                <RadioGroup defaultValue="basic" id="package" className="flex flex-wrap gap-4">
+                  <div className="flex-1 min-w-[120px]">
                     <RadioGroupItem value="basic" id="basic" className="peer sr-only" />
                     <Label
                       htmlFor="basic"
@@ -111,7 +111,7 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
                       <span className="text-sm font-medium">$99/month</span>
                     </Label>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-[120px]">
                     <RadioGroupItem value="premium" id="premium" className="peer sr-only" />
                     <Label
                       htmlFor="premium"
@@ -121,7 +121,7 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
                       <span className="text-sm font-medium">$199/month</span>
                     </Label>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-[120px]">
                     <RadioGroupItem value="elite" id="elite" className="peer sr-only" />
                     <Label
                       htmlFor="elite"
@@ -152,8 +152,8 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
                 </Select>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="space-y-2 flex-1">
                   <Label htmlFor="experience">Running Experience</Label>
                   <Select required>
                     <SelectTrigger id="experience">
@@ -168,7 +168,7 @@ export default function RequestCoachPage({ params }: { params: { id: string } })
                   </Select>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 flex-1">
                   <Label htmlFor="weekly_mileage">Current Weekly Mileage</Label>
                   <Select required>
                     <SelectTrigger id="weekly_mileage">

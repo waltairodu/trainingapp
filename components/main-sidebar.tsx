@@ -103,7 +103,7 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
           <SidebarContent className="py-2">
             <SidebarGroup className="py-0">
               <SidebarGroupContent>
-                <SidebarMenu className="gap-1 px-2">
+                <SidebarMenu className="flex flex-col space-y-1 px-2">
                   <SidebarMenuItem>
                     <NavLink href="/dashboard" isActive={isActive("/dashboard")}>
                       <Home className="h-4 w-4" />
@@ -119,7 +119,7 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroup className="py-1">
                 <SidebarGroupLabel className="px-4 mb-1">Runner</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu className="gap-1 px-2">
+                  <SidebarMenu className="flex flex-col space-y-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/runners/dashboard" isActive={isActive("/runners/dashboard")}>
                         <Activity className="h-4 w-4" />
@@ -160,7 +160,7 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroup className="py-1">
                 <SidebarGroupLabel className="px-4 mb-1">Coach</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu className="gap-1 px-2">
+                  <SidebarMenu className="flex flex-col space-y-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/coaches/dashboard" isActive={isActive("/coaches/dashboard")}>
                         <Users className="h-4 w-4" />
@@ -195,7 +195,7 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
               <SidebarGroup className="py-1">
                 <SidebarGroupLabel className="px-4 mb-1">Race Organizer</SidebarGroupLabel>
                 <SidebarGroupContent>
-                  <SidebarMenu className="gap-1 px-2">
+                  <SidebarMenu className="flex flex-col space-y-1 px-2">
                     <SidebarMenuItem>
                       <NavLink href="/races/dashboard" isActive={isActive("/races/dashboard")}>
                         <Trophy className="h-4 w-4" />
@@ -222,7 +222,7 @@ export function MainSidebar({ userRole = "runner", children }: MainSidebarProps)
             <SidebarGroup className="py-1">
               <SidebarGroupLabel className="px-4 mb-1">Workflows</SidebarGroupLabel>
               <SidebarGroupContent>
-                <SidebarMenu className="gap-1 px-2">
+                <SidebarMenu className="flex flex-col space-y-1 px-2">
                   <SidebarMenuItem>
                     <NavLink href="/workflows" isActive={isActive("/workflows")}>
                       <Workflow className="h-4 w-4" />

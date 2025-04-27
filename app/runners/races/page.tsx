@@ -36,7 +36,7 @@ export default function RunnerRacesPage() {
                       </div>
                       <Badge variant="outline">Registered</Badge>
                     </div>
-                    <div className="grid gap-1 text-sm mt-3">
+                    <div className="flex flex-col gap-1 text-sm mt-3">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4 text-muted-foreground" />
                         <span>May 15, 2025</span>
@@ -68,7 +68,7 @@ export default function RunnerRacesPage() {
                       </div>
                       <Badge variant="outline">Registered</Badge>
                     </div>
-                    <div className="grid gap-1 text-sm mt-3">
+                    <div className="flex flex-col gap-1 text-sm mt-3">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4 text-muted-foreground" />
                         <span>June 20, 2025</span>
@@ -115,7 +115,7 @@ export default function RunnerRacesPage() {
                         <span className="text-sm font-medium">3rd in Age Group</span>
                       </div>
                     </div>
-                    <div className="grid gap-1 text-sm mt-3">
+                    <div className="flex flex-col gap-1 text-sm mt-3">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4 text-muted-foreground" />
                         <span>April 10, 2025</span>

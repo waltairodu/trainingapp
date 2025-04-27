@@ -144,7 +144,7 @@ export function RunnerTrainingPlan() {
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
                 <h4 className="font-medium mb-2">Training Progress</h4>
-                <div className="space-y-3">
+                <div className="flex flex-col space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span>Weekly Distance</span>

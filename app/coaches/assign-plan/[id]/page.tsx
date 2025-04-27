@@ -75,8 +75,8 @@ export default function AssignPlanPage({ params }: { params: { id: string } }) {
         text={`Assign a training plan to ${athlete.name}`}
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1">
+      <div className="flex flex-col md:flex-row gap-6">
+        <Card className="md:flex-1">
           <CardHeader>
             <CardTitle>Athlete</CardTitle>
             <CardDescription>You're assigning a plan to:</CardDescription>
@@ -91,7 +91,7 @@ export default function AssignPlanPage({ params }: { params: { id: string } }) {
           </CardContent>
         </Card>
 
-        <Card className="md:col-span-2">
+        <Card className="md:flex-[2]">
           <form onSubmit={handleSubmit}>
             <CardHeader>
               <CardTitle>Training Plan Details</CardTitle>
@@ -100,8 +100,8 @@ export default function AssignPlanPage({ params }: { params: { id: string } }) {
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="plan-type">Plan Type</Label>
-                <RadioGroup defaultValue="existing" id="plan-type" className="grid grid-cols-2 gap-4">
-                  <div>
+                <RadioGroup defaultValue="existing" id="plan-type" className="flex flex-wrap gap-4">
+                  <div className="flex-1 min-w-[120px]">
                     <RadioGroupItem value="existing" id="existing" className="peer sr-only" />
                     <Label
                       htmlFor="existing"
@@ -111,7 +111,7 @@ export default function AssignPlanPage({ params }: { params: { id: string } }) {
                       <span className="text-sm text-muted-foreground">Use a template</span>
                     </Label>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-[120px]">
                     <RadioGroupItem value="custom" id="custom" className="peer sr-only" />
                     <Label
                       htmlFor="custom"
@@ -142,13 +142,13 @@ export default function AssignPlanPage({ params }: { params: { id: string } }) {
                 </Select>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="space-y-2 flex-1">
                   <Label htmlFor="start-date">Start Date</Label>
                   <Input id="start-date" type="date" required />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 flex-1">
                   <Label htmlFor="target-race-date">Target Race Date (Optional)</Label>
                   <Input id="target-race-date" type="date" />
                 </div>

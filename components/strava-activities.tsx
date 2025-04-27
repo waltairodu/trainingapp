@@ -64,7 +64,7 @@ export function StravaActivities() {
                       {new Date(activity.start_date).toLocaleDateString()} at{" "}
                       {new Date(activity.start_date).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                     </p>
-                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    <div className="flex flex-wrap gap-4">
                       <div className="flex items-center gap-1 text-sm">
                         <Activity className="h-4 w-4 text-muted-foreground" />
                         <span>{formatDistance(activity.distance)}</span>
@@ -93,8 +93,8 @@ export function StravaActivities() {
           </TabsContent>
           <TabsContent value="stats">
             <div className="space-y-4">
-              <div className="grid gap-4 grid-cols-2">
-                <Card>
+              <div className="flex flex-wrap gap-4">
+                <Card className="flex-1 min-w-[200px]">
                   <CardHeader className="p-3">
                     <CardTitle className="text-sm">Weekly Distance</CardTitle>
                   </CardHeader>
@@ -105,7 +105,7 @@ export function StravaActivities() {
                     <p className="text-xs text-muted-foreground">Last 7 days</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1 min-w-[200px]">
                   <CardHeader className="p-3">
                     <CardTitle className="text-sm">Weekly Time</CardTitle>
                   </CardHeader>

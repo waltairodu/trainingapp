@@ -46,7 +46,7 @@ export function UpcomingEvents() {
             </div>
             <Badge variant="outline">{event.status}</Badge>
           </div>
-          <div className="grid gap-1 text-sm">
+          <div className="flex flex-col space-y-1">
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <span>{event.date}</span>

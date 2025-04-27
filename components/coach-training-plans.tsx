@@ -88,9 +88,9 @@ export function CoachTrainingPlans() {
         <TabsTrigger value="assignments">Assignments</TabsTrigger>
       </TabsList>
       <TabsContent value="plans" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="flex flex-wrap gap-4">
           {plans.map((plan) => (
-            <Card key={plan.id}>
+            <Card key={plan.id} className="flex-1 min-w-[300px]">
               <CardContent className="p-4">
                 <div className="space-y-3">
                   <div className="flex items-start justify-between">
@@ -112,7 +112,7 @@ export function CoachTrainingPlans() {
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
-                  <div className="grid grid-cols-3 gap-2 text-sm">
+                  <div className="flex flex-wrap gap-2 text-sm">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4 text-muted-foreground" />
                       <span>{plan.duration}</span>
@@ -136,11 +136,11 @@ export function CoachTrainingPlans() {
         </div>
       </TabsContent>
       <TabsContent value="assignments" className="space-y-4">
-        <div className="space-y-4">
+        <div className="flex flex-col space-y-4">
           {assignments.map((assignment) => (
             <Card key={assignment.id}>
               <CardContent className="p-4">
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <Avatar>
                       <AvatarImage src={assignment.athleteAvatar || "/placeholder.svg"} alt={assignment.athleteName} />
@@ -156,7 +156,7 @@ export function CoachTrainingPlans() {
                   <Badge variant="outline">Progress: {assignment.progress}</Badge>
                 </div>
                 <div className="mt-4 space-y-2">
-                  <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex flex-wrap gap-4 text-sm">
                     <div>
                       <span className="text-muted-foreground">Start Date:</span> {assignment.startDate}
                     </div>

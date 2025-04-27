@@ -23,8 +23,8 @@ export default function RunnerDashboardPage() {
         </TabsList>
         <TabsContent value="overview" className="space-y-4">
           <StatsCards />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card className="lg:col-span-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <Card className="flex-1 md:flex-[4]">
               <CardHeader>
                 <CardTitle>Recent Activities</CardTitle>
                 <CardDescription>Your latest training sessions and race results.</CardDescription>
@@ -33,7 +33,7 @@ export default function RunnerDashboardPage() {
                 <RecentActivities />
               </CardContent>
             </Card>
-            <Card className="lg:col-span-3">
+            <Card className="flex-1 md:flex-[3]">
               <CardHeader>
                 <CardTitle>Workflow Tasks</CardTitle>
                 <CardDescription>Your pending tasks and approvals.</CardDescription>
@@ -54,11 +54,11 @@ export default function RunnerDashboardPage() {
           </Card>
         </TabsContent>
         <TabsContent value="training" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div className="lg:col-span-2">
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1 md:flex-[2]">
               <RunnerTrainingPlan />
             </div>
-            <div>
+            <div className="flex-1">
               <StravaActivities />
             </div>
           </div>
@@ -75,9 +75,9 @@ export default function RunnerDashboardPage() {
           </Card>
         </TabsContent>
         <TabsContent value="integrations" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex flex-col md:flex-row gap-4">
             <StravaConnect />
-            <Card>
+            <Card className="flex-1">
               <CardHeader>
                 <CardTitle>Garmin Connect</CardTitle>
                 <CardDescription>Connect your Garmin device</CardDescription>

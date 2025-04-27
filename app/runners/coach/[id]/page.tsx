@@ -96,8 +96,8 @@ I work with runners of all levels, from beginners to experienced marathoners loo
         </Button>
       </DashboardHeader>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1">
+      <div className="flex gap-6 flex-col md:flex-row">
+        <Card className="md:flex-1">
           <CardContent className="p-6 flex flex-col items-center text-center">
             <Avatar className="h-32 w-32 mb-4">
               <AvatarImage src={coach.avatar || "/placeholder.svg"} alt={coach.name} />
@@ -140,7 +140,7 @@ I work with runners of all levels, from beginners to experienced marathoners loo
           </CardContent>
         </Card>
 
-        <div className="md:col-span-2 space-y-6">
+        <div className="md:flex-1 space-y-6">
           <Tabs defaultValue="about" className="space-y-4">
             <TabsList>
               <TabsTrigger value="about">About</TabsTrigger>
@@ -167,9 +167,9 @@ I work with runners of all levels, from beginners to experienced marathoners loo
                   <CardDescription>Available coaching packages and pricing</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 md:grid-cols-3">
+                  <div className="flex gap-4 flex-col md:flex-row flex-wrap">
                     {coach.services.map((service, index) => (
-                      <Card key={index}>
+                      <Card key={index} className="flex-1">
                         <CardHeader>
                           <CardTitle>{service.title}</CardTitle>
                           <CardDescription className="text-lg font-bold">{service.price}</CardDescription>

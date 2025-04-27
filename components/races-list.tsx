@@ -48,9 +48,9 @@ export function RacesList() {
   ]
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="flex flex-wrap gap-4">
       {races.map((race) => (
-        <Card key={race.id} className={race.featured ? "border-primary" : ""}>
+        <Card key={race.id} className={`flex-1 min-w-[300px] ${race.featured ? "border-primary" : ""}`}>
           <CardContent className="p-4">
             <div className="flex flex-col gap-3">
               <div className="flex items-start justify-between">
@@ -64,7 +64,7 @@ export function RacesList() {
                 </div>
                 <Badge variant="outline">{race.status}</Badge>
               </div>
-              <div className="grid gap-1 text-sm">
+              <div className="flex flex-col space-y-1">
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4 text-muted-foreground" />
                   <span>{race.date}</span>

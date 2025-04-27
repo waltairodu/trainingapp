@@ -27,7 +27,7 @@ export default function CoachAthletesPage() {
           <TabsTrigger value="teams">Teams</TabsTrigger>
         </TabsList>
         <TabsContent value="all" className="space-y-4">
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>All Athletes</CardTitle>
               <CardDescription>Manage all athletes under your coaching.</CardDescription>
@@ -38,7 +38,7 @@ export default function CoachAthletesPage() {
           </Card>
         </TabsContent>
         <TabsContent value="active" className="space-y-4">
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Active Athletes</CardTitle>
               <CardDescription>Athletes currently in active training.</CardDescription>
@@ -49,7 +49,7 @@ export default function CoachAthletesPage() {
           </Card>
         </TabsContent>
         <TabsContent value="injured" className="space-y-4">
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Injured Athletes</CardTitle>
               <CardDescription>Athletes currently recovering from injury.</CardDescription>
@@ -60,14 +60,14 @@ export default function CoachAthletesPage() {
           </Card>
         </TabsContent>
         <TabsContent value="teams" className="space-y-4">
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Teams</CardTitle>
               <CardDescription>Manage your training groups and teams.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <Card>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>
@@ -80,7 +80,7 @@ export default function CoachAthletesPage() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="flex-1">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>

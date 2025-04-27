@@ -22,8 +22,8 @@ export default function RaceOrganizerDashboardPage() {
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
         </TabsList>
         <TabsContent value="overview" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card>
+          <div className="flex flex-wrap gap-4">
+            <Card className="flex-1 min-w-[240px]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Active Races</CardTitle>
               </CardHeader>
@@ -32,7 +32,7 @@ export default function RaceOrganizerDashboardPage() {
                 <p className="text-xs text-muted-foreground">Next: City Marathon (3 days)</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="flex-1 min-w-[240px]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Total Registrations</CardTitle>
               </CardHeader>
@@ -41,7 +41,7 @@ export default function RaceOrganizerDashboardPage() {
                 <p className="text-xs text-muted-foreground">+250 this week</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="flex-1 min-w-[240px]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Revenue</CardTitle>
               </CardHeader>
@@ -50,7 +50,7 @@ export default function RaceOrganizerDashboardPage() {
                 <p className="text-xs text-muted-foreground">+$3,200 this week</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="flex-1 min-w-[240px]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Pending Tasks</CardTitle>
               </CardHeader>
@@ -60,8 +60,8 @@ export default function RaceOrganizerDashboardPage() {
               </CardContent>
             </Card>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card className="lg:col-span-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <Card className="flex-1 md:flex-[4]">
               <CardHeader>
                 <CardTitle>Upcoming Races</CardTitle>
                 <CardDescription>Your scheduled race events</CardDescription>
@@ -70,7 +70,7 @@ export default function RaceOrganizerDashboardPage() {
                 <RacesList />
               </CardContent>
             </Card>
-            <Card className="lg:col-span-3">
+            <Card className="flex-1 md:flex-[3]">
               <CardHeader>
                 <CardTitle>Recent Registrations</CardTitle>
                 <CardDescription>Latest participant sign-ups</CardDescription>

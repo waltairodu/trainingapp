@@ -24,8 +24,8 @@ export function CoachAnalytics() {
         </Select>
       </div>
       <TabsContent value="team" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
+        <div className="flex flex-wrap gap-4">
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Total Distance</CardTitle>
             </CardHeader>
@@ -34,7 +34,7 @@ export function CoachAnalytics() {
               <p className="text-xs text-muted-foreground">+12.3% from previous period</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Training Hours</CardTitle>
             </CardHeader>
@@ -43,7 +43,7 @@ export function CoachAnalytics() {
               <p className="text-xs text-muted-foreground">+8.7% from previous period</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Avg. Compliance</CardTitle>
             </CardHeader>
@@ -52,7 +52,7 @@ export function CoachAnalytics() {
               <p className="text-xs text-muted-foreground">+2.1% from previous period</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Injury Rate</CardTitle>
             </CardHeader>
@@ -62,8 +62,8 @@ export function CoachAnalytics() {
             </CardContent>
           </Card>
         </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card>
+        <div className="flex flex-col md:flex-row gap-4">
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Weekly Distance Trend</CardTitle>
               <CardDescription>Team distance over time</CardDescription>
@@ -72,7 +72,7 @@ export function CoachAnalytics() {
               <p className="text-muted-foreground">Distance trend chart would go here</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Training Distribution</CardTitle>
               <CardDescription>Types of workouts completed</CardDescription>

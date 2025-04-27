@@ -24,8 +24,8 @@ export function RaceAnalytics() {
         </Select>
       </div>
       <TabsContent value="registrations" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
+        <div className="flex flex-wrap gap-4">
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Total Registrations</CardTitle>
             </CardHeader>
@@ -34,7 +34,7 @@ export function RaceAnalytics() {
               <p className="text-xs text-muted-foreground">+23% from last year</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Registration Rate</CardTitle>
             </CardHeader>
@@ -43,7 +43,7 @@ export function RaceAnalytics() {
               <p className="text-xs text-muted-foreground">Of capacity filled</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">New Participants</CardTitle>
             </CardHeader>
@@ -52,7 +52,7 @@ export function RaceAnalytics() {
               <p className="text-xs text-muted-foreground">First-time participants</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1 min-w-[240px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Conversion Rate</CardTitle>
             </CardHeader>
@@ -62,8 +62,8 @@ export function RaceAnalytics() {
             </CardContent>
           </Card>
         </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card>
+        <div className="flex flex-col md:flex-row gap-4">
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Registration Trend</CardTitle>
               <CardDescription>Daily registrations over time</CardDescription>
@@ -72,7 +72,7 @@ export function RaceAnalytics() {
               <p className="text-muted-foreground">Registration trend chart would go here</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="flex-1">
             <CardHeader>
               <CardTitle>Category Distribution</CardTitle>
               <CardDescription>Registrations by race category</CardDescription>

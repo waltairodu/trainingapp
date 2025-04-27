@@ -46,11 +46,11 @@ export function RecentActivities() {
   ]
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col space-y-4">
       {activities.map((activity) => (
         <div key={activity.id} className="flex items-start gap-4 rounded-lg border p-3">
           <Avatar>
-            <AvatarImage src={`/placeholder.svg?height=40&width=40`} alt={activity.title} />
+            <AvatarImage src={`/placeholder-40px-height.png?height=40&width=40`} alt={activity.title} />
             <AvatarFallback>{activity.type.substring(0, 1)}</AvatarFallback>
           </Avatar>
           <div className="flex-1 space-y-1">
